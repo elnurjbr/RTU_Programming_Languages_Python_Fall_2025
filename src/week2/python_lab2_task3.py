@@ -14,18 +14,23 @@ Instructions:
 4. Print the result.
 """
 
-# TODO: Get input from the user
+# Lab 3.3 – Operator Frequency Counter
+
+# 1. Get input from the user
 expression = input("Enter an arithmetic expression: ")
 
-# Define possible operator symbols
+# 2. Define possible operators
 operators = ['+', '-', '*', '/', '(', ')']
 
-# TODO: Initialize frequency dictionary
-operator_counts = {}
+# 3. Initialize frequency dictionary
+operator_counts = {op: 0 for op in operators}
 
-# TODO: Count operator occurrences
+# 4. Count occurrences
 for char in expression:
-    pass  # check if char in operators, update counts
+    if char in operators:
+        operator_counts[char] += 1
 
-# TODO: Print results
-print("Operator counts:", operator_counts)
+# 5. Print results
+print("Operator counts:")
+for op, count in operator_counts.items():
+    print(f"  {op}: {count}")
